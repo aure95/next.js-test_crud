@@ -5,7 +5,7 @@ import * as UserService from '../services/CrudOperationsService';
 import {User} from '../domains/User';
 /*import { PrismaClient } from '@prisma/client';*/
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 
 
   const user2: User = new User();

@@ -7,10 +7,10 @@ import { PrismaClient } from '../node_modules/.prisma/client';
 
 
 
-async function getServerSideProps(context){
+//async function getServerSideProps(context){
 
 
-  // ... you will write your Prisma Client queries here
+ /* // ... you will write your Prisma Client queries here
 
   const prisma = new PrismaClient({ errorFormat: 'minimal' });
 
@@ -29,7 +29,7 @@ async function getServerSideProps(context){
       }
     });*/
 
-}
+//}
 
 /*main()
   .catch(e => {

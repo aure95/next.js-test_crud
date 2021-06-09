@@ -1,6 +1,45 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { PrismaClient } from '../node_modules/.prisma/client';
+
+
+
+
+
+async function getServerSideProps(context){
+
+
+  // ... you will write your Prisma Client queries here
+
+  const prisma = new PrismaClient({ errorFormat: 'minimal' });
+
+  const user4 = await prisma.user.findMany().catch(e => {
+    throw e
+  })
+  .finally(async () => {
+    await prisma.$disconnect()
+  });
+  /*const user3 = await prisma.user.create(
+    {data: {
+      name  :'test',   
+      first_name:'hola', 
+      mail: 'mon@mail',       
+      password: '1454545'   
+      }
+    });*/
+
+}
+
+/*main()
+  .catch(e => {
+    throw e
+  })
+  .finally(async () => {
+    await prisma.$disconnect()
+  })
+*/
+
 
 export default function Home() {
   

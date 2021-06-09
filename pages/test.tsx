@@ -3,9 +3,9 @@ import useEffect from 'react';
 import styles from '../styles/Home.module.css';
 import * as UserService from '../services/CrudOperationsService';
 import {User} from '../domains/User';
+/*import { PrismaClient } from '@prisma/client';*/
 
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
 
 
   const user2: User = new User();
@@ -16,6 +16,16 @@ export async function getStaticProps(context) {
     user2.password = 'mysuperPassword';
   //const user: User = retrieve();
   console.log(user2);
+
+/* const prisma = new PrismaClient();
+ const user3 = await prisma.user.create(
+    {data: {
+      name  :'test',   
+      first_name:'hola', 
+      mail: 'mon@mail',       
+      password: '1454545'   
+      }
+    });*/
  
  const user: User = JSON.parse(JSON.stringify(user2));
 
